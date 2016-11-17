@@ -94,7 +94,7 @@ final class Template
      *
      * Impede que a classe Requisição seja clonada
      *
-     * @throws Execao Lança execção caso o usuário tente clonar este classe
+     * @throws Exception Dispara execção caso o usuário tente clonar este classe
      *
      * @return void
      */
@@ -108,7 +108,7 @@ final class Template
      *
      * Impede que a classe Requisição execute __wakeup
      *
-     * @throws Execao Lança execção caso o usuário tente executar este método
+     * @throws Exception Dispara execção caso o usuário tente executar este método
      *
      * @return void
      */
@@ -151,6 +151,10 @@ final class Template
      * Método que seta a view e renderia no template
      *
      * @param string $view Nome da view
+     * 
+     * @throws ParameterNotFoundException Dispara exceção caso não tenha sido informado o diretório onde fica o template
+     * @throws TemplateNotFoundException Dispara exceção caso o template informado não seja encontrado
+     * 
      * @return void
      */
     public function render($view)
@@ -205,6 +209,9 @@ final class Template
      *
      * Método que pega o conteúdo da view e exibe dentro de um template
      *
+     * @throws ParameterNotFoundException Dispara exceção caso o diretório da view não tenha sido informado
+     * @throws ViewNotFoundException Dispara exceção caso a view informada não seja encontrada
+     * 
      * @return void
      */
     public function getContent()
@@ -232,7 +239,7 @@ final class Template
      * @param string $pathFile Caminho para o arquivo a ser incluído
      * @param array $additionalParameters Lista de parametros adicionais a serem usadas na view
      *
-     * @throws FileNotFoundException
+     * @throws FileNotFoundException Dispara exceção caso o arquivo infomado não seja encontrado
      *
      * @return void
      */
@@ -272,6 +279,8 @@ final class Template
      * Armazena o caminho absoluto de onde fica os templates,
      * exemplo: /var/www/html/projeto/src/view/template
      *
+     * @throws ParameterNotFoundException Dispara exceção caso o caminho para o diretório de template seja informado vazio
+     * 
      * @param string $pathTemplate Caminho absoluto do diretório template
      * @return void
      */
@@ -290,6 +299,8 @@ final class Template
      * Armazena o caminho absoluto de onde fica as views,
      * exemplo: /var/www/html/projeto/src/view
      *
+     * @throws ParameterNotFoundException Dispara exceção caso o caminho para o diretório de view seja informado vazio
+     * 
      * @param string $pathView Caminho absoluto do diretório view
      * @return void
      */
@@ -308,6 +319,8 @@ final class Template
      * Armazena o caminho absoluto de onde fica os elementos de views,
      * exemplo: /var/www/html/projeto/src/view/elements
      *
+     * @throws ParameterNotFoundException Dispara exceção caso o caminho para o diretório de elements seja informado vazio
+     * 
      * @param string $pathView Caminho absoluto do diretório elements
      * @return void
      */
