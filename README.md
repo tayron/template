@@ -1,4 +1,4 @@
-## Template 1.0.0
+## Template 1.1.0
 
 Classe para renderização de templates, views e elements (pequenas partes de templates reaproveitáveis)
 
