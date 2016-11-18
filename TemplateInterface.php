@@ -3,7 +3,7 @@
 namespace Tayron;
 
 /**
- * Classe determina os métodos que um template deve implementar
+ * Classe determina os métodos que uma classe de template deve implementar
  *
  * @author Tayron Miranda <dev@tayron.com.br>
  */
