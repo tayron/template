@@ -14,7 +14,7 @@ use Tayron\exceptions\Exception;
  *
  * @author Tayron Miranda <dev@tayron.com.br>
  */
-final class Template
+final class Template implements TemplateInterface
 {
     /**
      * Armazena o caminho absoluto de onde fica os templates,
