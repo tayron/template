@@ -12,8 +12,8 @@
     ],    
     "require": {
         "php": ">=5.3",
-        "tayron/request" : "dev-master",
-        "tayron/exceptions" : "dev-master"
+        "tayron/request" : "1.0.0",
+        "tayron/exceptions" : "1.0.0"
     },
     "autoload": {
         "psr-4": {
