@@ -1,4 +1,4 @@
-## Template 1.1.0
+## Template
 
 Classe para renderização de templates, views e elements (pequenas partes de templates reaproveitáveis)
 
@@ -16,7 +16,7 @@ Classe para renderização de templates, views e elements (pequenas partes de te
 ```sh
     "require": {
         ...
-        "tayron/template" : "1.1.0"
+        "tayron/template" : "dev-master"
         ... 
     },    
 ```
