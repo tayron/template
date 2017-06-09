@@ -13,7 +13,7 @@
     "require": {
         "php": ">=5.3",
         "tayron/request" : "1.*",
-        "tayron/exceptions" : "*"
+        "tayron/exceptions" : "dev-master"
     },
     "autoload": {
         "psr-4": {
