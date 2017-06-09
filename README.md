@@ -16,7 +16,7 @@ Classe para renderização de templates, views e elements (pequenas partes de te
 ```sh
     "require": {
         ...
-        "tayron/template" : "1.0.0"
+        "tayron/template" : "1.1.0"
         ... 
     },    
 ```
