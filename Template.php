@@ -1,7 +1,7 @@
 <?php
 namespace Tayron;
 
-use Tayron\Request;
+use Tayron\RequestInterface;
 use Tayron\exceptions\ParameterNotFoundException;
 use Tayron\exceptions\ElementNotFoundException;
 use Tayron\exceptions\ViewNotFoundException;
@@ -71,7 +71,7 @@ final class Template implements TemplateInterface
     /**
      * Armazena objeto que trata requisições
      *
-     * @var Request
+     * @var Tayron\RequestInterface
      */
     private $request = null;
 
@@ -122,25 +122,26 @@ final class Template implements TemplateInterface
      *
      * Retorna uma instância única de uma classe.
      *
-     * @param string $controllerName Nome do controller que está sendo invocado
-     * @param Request $request Objeto que trata requisição
      * @param string $pathView Caminho absoluto de onde fica as views
      * @param string $pathTemplate Caminho absoluto de onde fica os templates
      * @param string $pathElements Caminho absoluto de onde fica os elementos de views
+     * @param string $controllerName Nome do controller que está sendo invocado
+     * @param Request $request Objeto que trata requisição
      *
      * @return Template Retorna instancia de Template
      */
-    public static function getInstance($controllerName = null, Request $request = null, $pathView, $pathTemplate, $pathElements)
+    public static function getInstance($pathView, $pathTemplate, $pathElements,
+        $controllerName = null, RequestInterface $request = null)
     {
         if (!static::$instance) {
             static::$instance = new static();
         }
 
-        self::$instance->controller = $controllerName;
-        self::$instance->request = $request;
         self::$instance->setPathView($pathView);
         self::$instance->setPathTemplate($pathTemplate);
         self::$instance->setPathElements($pathElements);
+        self::$instance->controller = $controllerName;
+        self::$instance->request = $request;
 
         return self::$instance;
     }
